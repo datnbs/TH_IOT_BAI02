@@ -55,6 +55,50 @@ Nhập họ tên và mã sinh viên theo yêu cầu.
 ## 6. Các file nộp
 - producer_bai1.py
 - consumer_bai1.py
+  
+# Bai 2 - Mô phỏng cảm biến IoT gửi dữ liệu môi trường
+## 1. Mục tiêu
+Xây dựng ứng dụng Python sử dụng thư viện Pika để mô phỏng thiết bị IoT gửi dữ liệu telemetry (nhiệt độ, độ ẩm) qua RabbitMQ và giám sát, cảnh báo khi dữ liệu vượt ngưỡng.
+## 2. Môi trường
+
+* Python 3.x
+* pika
+* RabbitMQ (cài trên máy Linux)
+* VS Code
+
+## 3. Cấu hình kết nối
+RabbitMQ được cài và chạy trực tiếp trên máy, không cần cấu hình thêm. Producer và Consumer kết nối tới broker mặc định tại localhost.
+## 4. Cách chạy
+Mở terminal thứ nhất (Monitoring Consumer):
+```bash
+python monitor_consumer_bai2.py
+```
+Mở terminal thứ hai (Sensor Producer):
+```bash
+python sensor_producer_bai2.py
+```
+Nhấn Ctrl+C để dừng chương trình.
+
+## 5. Kết quả
+
+* Sensor Producer kết nối tới RabbitMQ.
+* Sensor Producer gửi dữ liệu JSON (device_id, temperature, humidity) vào queue sensor_data_queue mỗi 3 giây, giá trị nhiệt độ và độ ẩm được sinh ngẫu nhiên.
+* Monitoring Consumer nhận dữ liệu và in ra mã thiết bị, nhiệt độ, độ ẩm.
+* Monitoring Consumer cảnh báo "CANH BAO: Nhiet do cao" khi nhiệt độ > 35.
+* Monitoring Consumer cảnh báo "CANH BAO: Do am thap" khi độ ẩm < 40.
+
+*Ví dụ đầu ra:
+
+Device: sensor01
+Temperature: 36.4
+Humidity: 38.9
+CANH BAO: Nhiet do cao
+CANH BAO: Do am thap
+
+## 6. Các file nộp
+
+* Sensor_Producer_bai2.py
+* Monitor_Consumer_bai2.py
 
 # Bài 3: Mô phỏng hệ thống điều phối cảnh báo IoT với exchange
 
