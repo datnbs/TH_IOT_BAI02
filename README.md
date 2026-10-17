@@ -55,3 +55,33 @@ Nhập họ tên và mã sinh viên theo yêu cầu.
 ## 6. Các file nộp
 - producer_bai1.py
 - consumer_bai1.py
+
+# Bài 3: Mô phỏng hệ thống điều phối cảnh báo IoT với exchange
+
+## 1. Broker sử dụng
+- **AMQP Broker:** RabbitMQ (Chạy qua Docker trên máy local ở cổng `5672`)
+- **Thư viện Python:** `pika`
+
+## 2. Cách chạy chương trình
+- **Warning Consumer:**
+  ```bash
+  python warning_consumer_bai3.py
+  ```
+- **Critical Consumer:**
+  ```bash
+  python critical_consumer_bai3.py
+  ```
+- **Alert Producer:**
+  ```bash
+  python alert_producer_bai3.py
+  ```
+
+## 3. Kết quả
+- Kết nối thành công tới RabbitMQ broker.
+- Các queue, exchange và routing key hoạt động chính xác theo yêu cầu từng bài.
+- Các consumer nhận đúng thông điệp và phân loại cảnh báo chuẩn xác.
+
+## 4. Các file nộp
+- `alert_producer_bai3.py`
+- `warning_consumer_bai3.py`
+- `critical_consumer_bai3.py`
