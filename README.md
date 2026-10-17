@@ -89,11 +89,11 @@ Nhấn Ctrl+C để dừng chương trình.
 
 *Ví dụ đầu ra:
 
-Device: sensor01
-Temperature: 36.4
-Humidity: 38.9
-CANH BAO: Nhiet do cao
-CANH BAO: Do am thap
+-Device: sensor01
+-Temperature: 36.4
+-Humidity: 38.9
+-CANH BAO: Nhiet do cao
+-CANH BAO: Do am thap
 
 ## 6. Các file nộp
 
